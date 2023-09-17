@@ -68,13 +68,10 @@ class InstaLikes:
     def like_reels(self):
         # Find reels by looking for the text "Like" and then finding the parent span of the element
         reels = self.driver.find_elements(By.XPATH, '//*[text()="Like"]//ancestor::span[1]')
-        # Print the number of reels found
-        print(len(reels))
         # Loop through each reel and try to click it
         for reel in reels:
             try:
                 reel.click()
-                print('reels liked successfully')
                 time.sleep(1)
             # If an exception is thrown, just pass and continue
             except selenium.common.exceptions.NoSuchElementException:
