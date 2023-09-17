@@ -5,9 +5,12 @@ import time
 USERNAME = ''
 PASSWORD = ''
 
+# Login to Instagram
 bot = InstaLikes()
 bot.login(USERNAME, PASSWORD)
+# Load reels
 bot.load_reels()
+# Like reels
 for i in range(100):
     bot.like_reels()
     time.sleep(10)
